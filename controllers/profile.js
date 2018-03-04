@@ -1,6 +1,5 @@
 const handleProfileGet = (req, res, db) => {
   const { id } = req.params;
-  let found = false;
   db.select('*').from('users').where({id})
     .then(user => {
       if (user.length) {
@@ -13,5 +12,5 @@ const handleProfileGet = (req, res, db) => {
 }
 
 module.exports = {
-  handleProfileGet: handleProfileGet
+  handleProfileGet
 }
